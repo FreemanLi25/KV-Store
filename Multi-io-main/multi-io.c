@@ -26,9 +26,6 @@ void *client_thread(void *arg) {
 		if (count == 0) {
 			break;
 		}
-		
-		//
-		
 		send(clientfd, buffer, count, 0);
 		printf("clientfd: %d, count: %d, buffer: %s\n", clientfd, count, buffer);
 
