@@ -46,7 +46,7 @@ void equals(char *pattern, char *result, char *casename) {
 	}
 }
 
-// "SET Name King" "SUCCESS"
+// "SET Name Li" "SUCCESS"
 // pattern: 预期结果,case: 测试用例
 void test_case(int connfd, char *msg, char *pattern, char *casename) {
 
@@ -63,8 +63,8 @@ void test_case(int connfd, char *msg, char *pattern, char *casename) {
 
 void array_testcase(int connfd) {
 
-	test_case(connfd, "SET Name King", "SUCCESS", "SETCase");
-	test_case(connfd, "GET Name", "King", "GETCase");
+	test_case(connfd, "SET Name Li", "SUCCESS", "SETCase");
+	test_case(connfd, "GET Name", "Li", "GETCase");
 	test_case(connfd, "MOD Name Darren", "SUCCESS", "MODCase");
 	test_case(connfd, "GET Name", "Darren", "GETCase");
 	test_case(connfd, "DEL Name", "SUCCESS", "DELCase");
@@ -86,8 +86,8 @@ void array_testcase_10w(int connfd) { // 10w
 
 void rbtree_testcase(int connfd) {
 
-	test_case(connfd, "RSET Name King", "SUCCESS", "SETCase");
-	test_case(connfd, "RGET Name", "King", "GETCase");
+	test_case(connfd, "RSET Name Li", "SUCCESS", "SETCase");
+	test_case(connfd, "RGET Name", "Li", "GETCase");
 	test_case(connfd, "RMOD Name Darren", "SUCCESS", "MODCase");
 	test_case(connfd, "RGET Name", "Darren", "GETCase");
 	test_case(connfd, "RDEL Name", "SUCCESS", "DELCase");
@@ -115,7 +115,7 @@ void rbtree_testcase_5w_node(int connfd) {
 
 		char cmd[128] = {0};
 
-		snprintf(cmd, 128, "RSET Name%d King%d", i, i);
+		snprintf(cmd, 128, "RSET Name%d Li%d", i, i);
 		test_case(connfd, cmd, "SUCCESS", "SETCase");
 
 		char result[128] = {0};
@@ -129,7 +129,7 @@ void rbtree_testcase_5w_node(int connfd) {
 		
 		char cmd[128] = {0};
 
-		snprintf(cmd, 128, "RDEL Name%d King%d", i, i);
+		snprintf(cmd, 128, "RDEL Name%d Li%d", i, i);
 		test_case(connfd, cmd, "SUCCESS", "DELCase");
 
 		char result[128] = {0};
@@ -145,8 +145,8 @@ void rbtree_testcase_5w_node(int connfd) {
 
 void hash_testcase(int connfd) {
 
-	test_case(connfd, "HSET Name King", "SUCCESS", "HSETCase");
-	test_case(connfd, "HGET Name", "King", "HGETCase");
+	test_case(connfd, "HSET Name Li", "SUCCESS", "HSETCase");
+	test_case(connfd, "HGET Name", "Li", "HGETCase");
 	test_case(connfd, "HMOD Name Darren", "SUCCESS", "HMODCase");
 	test_case(connfd, "HGET Name", "Darren", "HGETCase");
 	test_case(connfd, "HDEL Name", "SUCCESS", "HDELCase");
@@ -175,7 +175,7 @@ void hash_testcase_5w_node(int connfd) {
 
 		char cmd[128] = {0};
 
-		snprintf(cmd, 128, "HSET Name%d King%d", i, i);
+		snprintf(cmd, 128, "HSET Name%d Li%d", i, i);
 		test_case(connfd, cmd, "SUCCESS", "SETCase");
 
 		char result[128] = {0};
@@ -189,7 +189,7 @@ void hash_testcase_5w_node(int connfd) {
 		
 		char cmd[128] = {0};
 
-		snprintf(cmd, 128, "HDEL Name%d King%d", i, i);
+		snprintf(cmd, 128, "HDEL Name%d Li%d", i, i);
 		test_case(connfd, cmd, "SUCCESS", "DELCase");
 
 		char result[128] = {0};
