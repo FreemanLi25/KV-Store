@@ -60,22 +60,9 @@ struct conn_item connlist[1024] = {0};
 
 #if ENABLE_HTTP_RESPONSE
 
-#define ROOT_DIR	"/home/king/share/0voice2310/2.1.1-multi-io/"
-
 
 typedef struct conn_item connection_t;
 
-
-// http://192.168.243.129:2048/index.html
-// GET /index.html HTTP/1.1
-
-// http://192.168.243.129:2048/abc.html
-// GET /abc.html HTTP/1.1
-int http_request(connection_t *conn) { //
-// GET /index.html HTTP/1.1
-	
-	// conn->rbuffer
-	// conn->wlen
 	
 	return 0;
 }
@@ -89,7 +76,7 @@ int http_response(connection_t *conn) {
 		"Content-Length: 82\r\n"
 		"Content-Type: text/html\r\n"
 		"Date: Sat, 06 Aug 2023 13:16:46 GMT\r\n\r\n"
-		"<html><head><title>0voice.king</title></head><body><h1>King</h1></body></html>\r\n\r\n");
+		"<html><head><title>yao</title></head><body><h1>King</h1></body></html>\r\n\r\n");
 #else
 
 	int filefd = open("index.html", O_RDONLY);
